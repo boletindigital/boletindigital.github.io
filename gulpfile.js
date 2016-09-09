@@ -13,7 +13,7 @@ var gulp = require('gulp'),
 var paths = {
     scripts: 'src/js/**/*.*',
     styles: 'src/less/**/*.*',
-    images: 'src/img/**/*.*',
+    images: '{src/img/**/*.*,src/components/material-kit/assets/img/*.*}',
     templates: 'src/templates/**/*.html',
     index: 'src/{index,components-documentation}.html',
     bower_fonts: 'src/components/**/*.{ttf,woff,eof,svg}',
