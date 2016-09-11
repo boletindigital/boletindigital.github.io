@@ -4,7 +4,7 @@ node_js:
 before_script:
 - npm install -g gulp bower
 - bower install
-script: gulp
+script: bash ./deploy.sh
 env:
   global:
   - ENCRYPTION_LABEL: 064c411d83d2
