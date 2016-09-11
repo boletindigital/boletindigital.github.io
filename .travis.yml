@@ -1,0 +1,13 @@
+language: node_js
+
+node_js:
+- node
+
+before_script:
+  - npm install -g gulp bower
+  - bower install
+script: gulp
+env:
+  global:
+  - ENCRYPTION_LABEL: "lbl"
+  - COMMIT_AUTHOR_EMAIL: "mauricio@navarromiranda.mx"
