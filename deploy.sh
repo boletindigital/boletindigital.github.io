@@ -29,6 +29,7 @@ cd ..
 
 # Clean out existing contents
 rm -rf dist/**/* || exit 0
+echo 'boletin.digital' > dist/CNAME
 
 # Run our compile script
 doCompile
