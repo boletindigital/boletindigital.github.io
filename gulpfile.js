@@ -8,6 +8,7 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     less = require('gulp-less'),
     rename = require('gulp-rename'),
+    replace = require('gulp-replace'),
     minifyHTML = require('gulp-htmlmin');
 
 var paths = {
@@ -29,6 +30,7 @@ gulp.task('usemin', function() {
             css: [minifyCss({keepSpecialComments: 0}), 'concat'],
             googlefonts: [minifyCss({keepSpecialComments: 0}), 'concat'],
         }))
+        .pipe(replace(/\?v=4.5.0/g, ''))
         .pipe(gulp.dest('dist/'));
 });
 
