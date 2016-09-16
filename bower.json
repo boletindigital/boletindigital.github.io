@@ -19,6 +19,8 @@
     "bootstrap": "~3.3.6",
     "font-awesome": "~4.5.0",
     "moment": "^2.14.1",
-    "material-kit": "^1.1.0"
+    "material-kit": "^1.1.0",
+    "roboto": "https://google-fonts.azurewebsites.net/googleFonts/css?family=Roboto:300,400,500,700",
+    "materialIcons": "https://google-fonts.azurewebsites.net/googleFonts/materialIcons?family=Material+Icons"
   }
 }

@@ -27,6 +27,7 @@ gulp.task('usemin', function() {
         .pipe(usemin({
             js: [minifyJs(), 'concat'],
             css: [minifyCss({keepSpecialComments: 0}), 'concat'],
+            googlefonts: [minifyCss({keepSpecialComments: 0}), 'concat'],
         }))
         .pipe(gulp.dest('dist/'));
 });
