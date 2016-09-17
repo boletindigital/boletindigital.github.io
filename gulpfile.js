@@ -77,7 +77,7 @@ gulp.task('custom-templates', function() {
         .pipe(gulp.dest('dist/templates'));
 });
 
-gulp.task('uncss', function() {
+gulp.task('uncss', ['usemin', 'build-assets', 'build-custom'], function() {
     return gulp.src('dist/**/*.css')
         .pipe(uncss({
             html: [paths.index]
