@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
     usemin = require('gulp-usemin'),
+    uncss = require('gulp-uncss'),
     wrap = require('gulp-wrap'),
     connect = require('gulp-connect'),
     watch = require('gulp-watch'),
@@ -16,7 +17,7 @@ var paths = {
     styles: 'src/less/**/*.*',
     images: '{src/img/**/*.*,src/components/material-kit/assets/img/*.*}',
     templates: 'src/templates/**/*.html',
-    index: 'src/{index,components-documentation}.html',
+    index: 'src/index.html',
     bower_fonts: 'src/components/**/*.{ttf,woff,woff2,eof,svg}',
 };
 
@@ -76,6 +77,14 @@ gulp.task('custom-templates', function() {
         .pipe(gulp.dest('dist/templates'));
 });
 
+gulp.task('uncss', function() {
+    return gulp.src('dist/**/*.css')
+        .pipe(uncss({
+            html: [paths.index]
+        }))
+        .pipe(gulp.dest('dist/'));
+});
+
 /**
  * Watch custom files
  */
@@ -107,5 +116,5 @@ gulp.task('livereload', function() {
 /**
  * Gulp tasks
  */
-gulp.task('build', ['usemin', 'build-assets', 'build-custom']);
+gulp.task('build', ['usemin', 'build-assets', 'build-custom', 'uncss']);
 gulp.task('default', ['build', 'webserver', 'livereload', 'watch']);
