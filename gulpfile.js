@@ -28,7 +28,7 @@ gulp.task('usemin', function() {
     return gulp.src(paths.index)
         .pipe(usemin({
             js: [minifyJs(), 'concat'],
-            css: [minifyCss({keepSpecialComments: 0}), 'concat']
+            css: [minifyCss(), 'concat']
         }))
         .pipe(replace(/\?v=4.5.0/g, ''))
         .pipe(gulp.dest('dist/'));
@@ -81,7 +81,7 @@ gulp.task('uncss', ['usemin', 'build-assets', 'build-custom'], function() {
         .pipe(uncss({
             html: [paths.index]
         }))
-        .pipe(minifyCss({keepSpecialComments : 0}))
+        .pipe(minifyCss({discardComments: {removeAll: true}}))
         .pipe(gulp.dest('dist/'));
 });
 
