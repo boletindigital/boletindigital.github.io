@@ -2,3 +2,7 @@
   max-width: 400px;
   overflow: hidden;
 }
+
+.header-ciudad-judicial-bg{
+  background-image: url('../../img/img/ciudad-judicial-768x603.jpg');
+}
